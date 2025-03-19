@@ -19,7 +19,8 @@ pipeline {
                     emailext (
                         subject: "Test Results - ${currentBuild.currentResult}",
                         body: "Unit tests completed! Status: ${currentBuild.currentResult}",
-                        to: "your-email@example.com" // Replace with YOUR email
+                        to: "akshitmittal1718@gmail.com", 
+                        replyTo: "akshitmittal1718@gmail.com"
                     )
                 }
             }
