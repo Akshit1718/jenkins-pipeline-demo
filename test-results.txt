@@ -1,0 +1,12 @@
+JUnit Test Report
+=================
+Tests run: 15
+Passed: 15
+Failed: 0
+Skipped: 0
+
+Test Cases:
+- testLogin_Success
+- testUserRegistration
+- testPaymentProcessing
+- ... (add more dummy test names)
