@@ -1,0 +1,3 @@
+[INFO] Deploying to staging server...
+[SUCCESS] Copied target/app.war to user@staging:/deploy
+[SUCCESS] Tomcat service restarted.
