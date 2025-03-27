@@ -6,10 +6,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo "[TOOL] Apache Maven: Compiling and packaging code"
-                // Simulate Maven build log
-                sh '''
-                    echo "mvn clean install" > build.log
-                    echo "BUILD SUCCESS" >> build.log
+                bat '''
+                    echo mvn clean install > build.log
+                    echo BUILD SUCCESS >> build.log
                 '''
             }
         }
@@ -18,13 +17,12 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 echo "[TOOL] JUnit: Running unit tests"
-                // Simulate JUnit test report
-                sh '''
-                    echo "JUnit Test Results" > test-results.txt
-                    echo "=========================" >> test-results.txt
-                    echo "Tests Run: 20" >> test-results.txt
-                    echo "Passed: 20" >> test-results.txt
-                    echo "Failed: 0" >> test-results.txt
+                bat '''
+                    echo JUnit Test Results > test-results.txt
+                    echo ========================= >> test-results.txt
+                    echo Tests Run: 20 >> test-results.txt
+                    echo Passed: 20 >> test-results.txt
+                    echo Failed: 0 >> test-results.txt
                 '''
             }
             post {
@@ -44,9 +42,8 @@ pipeline {
         stage('Code Analysis') {
             steps {
                 echo "[TOOL] SonarQube: Checking code quality"
-                // Simulate SonarQube HTML report
-                sh '''
-                    echo "<html><body><h1>SonarQube Report</h1><p>Bugs: 0</p><p>Code Smells: 3</p></body></html>" > sonarqube-report.html
+                bat '''
+                    echo ^<html^>^<body^>^<h1^>SonarQube Report^</h1^>^<p^>Bugs: 0^</p^>^<p^>Code Smells: 3^</p^>^</body^>^</html^> > sonarqube-report.html
                 '''
             }
         }
@@ -55,9 +52,8 @@ pipeline {
         stage('Security Scan') {
             steps {
                 echo "[TOOL] OWASP Dependency-Check: Scanning vulnerabilities"
-                // Simulate security report
-                sh '''
-                    echo "<html><body><h1>Security Report</h1><p>Critical: 0</p><p>High: 2</p></body></html>" > security-scan.html
+                bat '''
+                    echo ^<html^>^<body^>^<h1^>Security Report^</h1^>^<p^>Critical: 0^</p^>^<p^>High: 2^</p^>^</body^>^</html^> > security-scan.html
                 '''
             }
             post {
@@ -76,10 +72,9 @@ pipeline {
         stage('Deploy to Staging') {
             steps {
                 echo "[TOOL] SCP/SSH: Deploying to staging server"
-                // Simulate deployment logs
-                sh '''
-                    echo "[INFO] Deploying app.war to staging" > deploy-staging.log
-                    echo "[SUCCESS] Deployment completed" >> deploy-staging.log
+                bat '''
+                    echo [INFO] Deploying app.war to staging > deploy-staging.log
+                    echo [SUCCESS] Deployment completed >> deploy-staging.log
                 '''
             }
         }
@@ -88,9 +83,8 @@ pipeline {
         stage('Integration Tests') {
             steps {
                 echo "[TOOL] Postman/Newman: Testing APIs"
-                // Simulate Postman test results
-                sh '''
-                    echo '{"run":{"stats":{"requests":{"total":10,"failed":0}}},"failures":[]}' > postman-results.json
+                bat '''
+                    echo {"run":{"stats":{"requests":{"total":10,"failed":0}},"failures":[]}} > postman-results.json
                 '''
             }
         }
@@ -99,10 +93,9 @@ pipeline {
         stage('Deploy to Production') {
             steps {
                 echo "[TOOL] Docker: Containerizing application"
-                // Simulate Docker deployment logs
-                sh '''
-                    echo "docker build -t my-app:prod" > docker-deploy.log
-                    echo "docker push my-app:prod" >> docker-deploy.log
+                bat '''
+                    echo docker build -t my-app:prod > docker-deploy.log
+                    echo docker push my-app:prod >> docker-deploy.log
                 '''
             }
         }
