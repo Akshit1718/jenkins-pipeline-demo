@@ -1,0 +1,9 @@
+{
+  "run": {
+    "stats": {
+      "iterations": { "total": 10, "pending": 0, "failed": 0 },
+      "requests": { "total": 10, "pending": 0, "failed": 0 }
+    },
+    "failures": []
+  }
+}
