@@ -1,0 +1,4 @@
+[INFO] Building Docker image: my-app:prod
+[SUCCESS] Image built and tagged.
+[INFO] Pushing image to Docker Hub...
+[SUCCESS] Image pushed successfully.
